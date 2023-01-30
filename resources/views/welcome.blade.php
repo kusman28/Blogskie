@@ -16,7 +16,7 @@
 <body class="bg-gray-100 h-screen antialiased leading-none font-sans">
 <div class="flex flex-col">
     @if(Route::has('login'))
-        <div class="absolute top-0 right-0 mt-4 mr-4 space-x-4 sm:mt-6 sm:mr-6 sm:space-x-6">
+        {{-- <div class="absolute top-0 right-0 mt-4 mr-4 space-x-4 sm:mt-6 sm:mr-6 sm:space-x-6">
             @auth
                 <a href="{{ url('/home') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Home') }}</a>
             @else
@@ -25,7 +25,34 @@
                     <a href="{{ route('register') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Register') }}</a>
                 @endif
             @endauth
-        </div>
+        </div> --}}
+        <header class="bg-blue-500 py-6">
+            <div class="container mx-auto flex justify-between items-center px-6">
+                <div>
+                    <a href="{{ url('/') }}" class="text-lg font-semibold text-gray-100 no-underline">
+                        {{ config('app.name', 'Laravel') }}
+                    </a>
+                </div>
+                <nav class="space-x-4 text-gray-100 text-sm sm:text-base">
+                    @guest
+                        <a class="no-underline hover:underline" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        @if (Route::has('register'))
+                            <a class="no-underline hover:underline" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        @endif
+                    @else
+                        <span>{{ Auth::user()->name }}</span>
+
+                        <a href="{{ route('logout') }}"
+                           class="no-underline hover:underline"
+                           onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                            {{ csrf_field() }}
+                        </form>
+                    @endguest
+                </nav>
+            </div>
+        </header>
     @endif
 
     <div class="min-h-screen flex items-center justify-center">
