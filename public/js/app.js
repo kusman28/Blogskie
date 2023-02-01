@@ -2099,6 +2099,234 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'BlogskieTestComponent',
@@ -19714,95 +19942,630 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "flex flex-col justify-around h-full" }, [
-      _c(
-        "h1",
-        {
-          staticClass:
-            "pt-3 font-body text-4xl font-semibold text-primary md:text-3xl lg:text-2xl mb-4",
-        },
-        [_vm._v("Latest Posts")]
-      ),
+    return _c("div", { staticClass: "container my-12 mx-auto px-4 md:px-12" }, [
+      _c("h1", { staticClass: "text-lg font-bold text-black" }, [
+        _vm._v("\n            Recent Posts\n        "),
+      ]),
       _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass:
-            "max-w-2xl overflow-hidden bg-white rounded-lg shadow-md mt-4",
-        },
-        [
-          _c("img", {
-            staticClass: "object-cover w-full h-64",
-            attrs: {
-              src: "https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
-              alt: "Article",
-            },
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "p-6" }, [
-            _c("div", [
-              _c(
-                "a",
-                {
-                  staticClass:
-                    "rounded-full px-2 py-1 bg-blue-500 text-gray-100 font-bold round",
-                  attrs: { href: "#" },
-                },
-                [_vm._v("Profession")]
-              ),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass:
-                    "block mt-6 text-xl font-semibold text-gray-800 transition-colors duration-300 transform",
-                  attrs: { href: "#", tabindex: "0", role: "link" },
-                },
-                [_vm._v("I Built A Successful Blog In One Year")]
-              ),
-              _vm._v(" "),
-              _c(
-                "p",
-                {
-                  staticClass: "mt-2 text-sm text-gray-600 dark:text-gray-600",
-                },
-                [
-                  _vm._v(
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molestie parturient et sem ipsum volutpat vel. Natoque sem et aliquam mauris egestas quam volutpat viverra. In pretium nec senectus erat. Et malesuada lobortis."
-                  ),
-                ]
-              ),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mt-4" }, [
-              _c("div", { staticClass: "flex items-center" }, [
-                _c("div", { staticClass: "flex items-center" }, [
+      _c("div", { staticClass: "flex flex-wrap -mx-1 lg:-mx-4" }, [
+        _c(
+          "div",
+          { staticClass: "my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3" },
+          [
+            _c(
+              "article",
+              { staticClass: "overflow-hidden rounded-lg shadow-lg" },
+              [
+                _c("a", { attrs: { href: "#" } }, [
                   _c("img", {
-                    staticClass: "object-cover h-10 rounded-full",
+                    staticClass: "block h-auto w-full",
                     attrs: {
-                      src: "https://images.unsplash.com/photo-1586287011575-a23134f797f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=48&q=60",
-                      alt: "Avatar",
+                      alt: "Placeholder",
+                      src: "https://picsum.photos/600/400/?random",
                     },
                   }),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "mx-2 font-semibold text-gray-700",
-                      attrs: { href: "#", tabindex: "0", role: "link" },
-                    },
-                    [_vm._v("K. Usman")]
+                ]),
+                _vm._v(" "),
+                _c(
+                  "header",
+                  {
+                    staticClass:
+                      "flex items-center justify-between leading-tight p-3 md:p-4",
+                  },
+                  [
+                    _c("h1", { staticClass: "text-lg" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass:
+                            "no-underline hover:underline font-bold text-black",
+                          attrs: { href: "#" },
+                        },
+                        [
+                          _vm._v(
+                            "\n                            Article Title\n                        "
+                          ),
+                        ]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "text-grey-darker text-sm" }, [
+                      _vm._v(
+                        "\n                        11/1/19\n                    "
+                      ),
+                    ]),
+                  ]
+                ),
+                _vm._v(" "),
+                _c("p", { staticClass: "p-3" }, [
+                  _vm._v(
+                    "\n                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro provident tempore harum vero corporis quaerat molestiae sunt repudiandae molestias minima, beatae ad quo esse at, a iure repellendus ipsa consequuntur!\n                "
                   ),
                 ]),
                 _vm._v(" "),
-                _c("span", { staticClass: "mx-1 text-xs text-gray-600" }, [
-                  _vm._v("21 SEP 2015"),
+                _c(
+                  "footer",
+                  {
+                    staticClass:
+                      "flex items-center justify-between leading-none p-2 md:p-4",
+                  },
+                  [
+                    _c(
+                      "a",
+                      {
+                        staticClass:
+                          "flex items-center no-underline hover:underline text-black",
+                        attrs: { href: "#" },
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "block rounded-full",
+                          attrs: {
+                            alt: "Placeholder",
+                            src: "https://picsum.photos/32/32/?random",
+                          },
+                        }),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "ml-2 text-sm" }, [
+                          _vm._v(
+                            "\n                            K. Usman\n                        "
+                          ),
+                        ]),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "px-6 pt-4 pb-2" }, [
+                      _c(
+                        "span",
+                        {
+                          staticClass:
+                            "inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2",
+                        },
+                        [_vm._v("#photography")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          staticClass:
+                            "inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2",
+                        },
+                        [_vm._v("#travel")]
+                      ),
+                    ]),
+                  ]
+                ),
+              ]
+            ),
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3" },
+          [
+            _c(
+              "article",
+              { staticClass: "overflow-hidden rounded-lg shadow-lg" },
+              [
+                _c("a", { attrs: { href: "#" } }, [
+                  _c("img", {
+                    staticClass: "block h-auto w-full",
+                    attrs: {
+                      alt: "Placeholder",
+                      src: "https://picsum.photos/600/400/?random",
+                    },
+                  }),
                 ]),
-              ]),
-            ]),
-          ]),
-        ]
-      ),
+                _vm._v(" "),
+                _c("p", { staticClass: "p-3" }, [
+                  _vm._v(
+                    "\n                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro aliquam eligendi exercitationem et non distinctio commodi dolore quos corrupti minus placeat laborum, maxime ea? Ut sequi ea dignissimos reiciendis unde sunt aut ipsam qui mollitia! Molestiae at nisi recusandae dignissimos.\n                "
+                  ),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "header",
+                  {
+                    staticClass:
+                      "flex items-center justify-between leading-tight p-2 md:p-4",
+                  },
+                  [
+                    _c("h1", { staticClass: "text-lg" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass:
+                            "no-underline hover:underline font-bold text-black",
+                          attrs: { href: "#" },
+                        },
+                        [
+                          _vm._v(
+                            "\n                            Article Title\n                        "
+                          ),
+                        ]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "text-grey-darker text-sm" }, [
+                      _vm._v(
+                        "\n                        11/1/19\n                    "
+                      ),
+                    ]),
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "footer",
+                  {
+                    staticClass:
+                      "flex items-center justify-between leading-none p-2 md:p-4",
+                  },
+                  [
+                    _c(
+                      "a",
+                      {
+                        staticClass:
+                          "flex items-center no-underline hover:underline text-black",
+                        attrs: { href: "#" },
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "block rounded-full",
+                          attrs: {
+                            alt: "Placeholder",
+                            src: "https://picsum.photos/32/32/?random",
+                          },
+                        }),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "ml-2 text-sm" }, [
+                          _vm._v(
+                            "\n                            Author Name\n                        "
+                          ),
+                        ]),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass:
+                          "no-underline text-grey-darker hover:text-red-dark",
+                        attrs: { href: "#" },
+                      },
+                      [
+                        _c("span", { staticClass: "hidden" }, [_vm._v("Like")]),
+                        _vm._v(" "),
+                        _c("i", { staticClass: "fa fa-heart" }),
+                      ]
+                    ),
+                  ]
+                ),
+              ]
+            ),
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3" },
+          [
+            _c(
+              "article",
+              { staticClass: "overflow-hidden rounded-lg shadow-lg" },
+              [
+                _c("a", { attrs: { href: "#" } }, [
+                  _c("img", {
+                    staticClass: "block h-auto w-full",
+                    attrs: {
+                      alt: "Placeholder",
+                      src: "https://picsum.photos/600/400/?random",
+                    },
+                  }),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "header",
+                  {
+                    staticClass:
+                      "flex items-center justify-between leading-tight p-2 md:p-4",
+                  },
+                  [
+                    _c("h1", { staticClass: "text-lg" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass:
+                            "no-underline hover:underline text-black",
+                          attrs: { href: "#" },
+                        },
+                        [
+                          _vm._v(
+                            "\n                            Article Title\n                        "
+                          ),
+                        ]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "text-grey-darker text-sm" }, [
+                      _vm._v(
+                        "\n                        11/1/19\n                    "
+                      ),
+                    ]),
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "footer",
+                  {
+                    staticClass:
+                      "flex items-center justify-between leading-none p-2 md:p-4",
+                  },
+                  [
+                    _c(
+                      "a",
+                      {
+                        staticClass:
+                          "flex items-center no-underline hover:underline text-black",
+                        attrs: { href: "#" },
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "block rounded-full",
+                          attrs: {
+                            alt: "Placeholder",
+                            src: "https://picsum.photos/32/32/?random",
+                          },
+                        }),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "ml-2 text-sm" }, [
+                          _vm._v(
+                            "\n                            Author Name\n                        "
+                          ),
+                        ]),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass:
+                          "no-underline text-grey-darker hover:text-red-dark",
+                        attrs: { href: "#" },
+                      },
+                      [
+                        _c("span", { staticClass: "hidden" }, [_vm._v("Like")]),
+                        _vm._v(" "),
+                        _c("i", { staticClass: "fa fa-heart" }),
+                      ]
+                    ),
+                  ]
+                ),
+              ]
+            ),
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3" },
+          [
+            _c(
+              "article",
+              { staticClass: "overflow-hidden rounded-lg shadow-lg" },
+              [
+                _c("a", { attrs: { href: "#" } }, [
+                  _c("img", {
+                    staticClass: "block h-auto w-full",
+                    attrs: {
+                      alt: "Placeholder",
+                      src: "https://picsum.photos/600/400/?random",
+                    },
+                  }),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "header",
+                  {
+                    staticClass:
+                      "flex items-center justify-between leading-tight p-2 md:p-4",
+                  },
+                  [
+                    _c("h1", { staticClass: "text-lg" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass:
+                            "no-underline hover:underline text-black",
+                          attrs: { href: "#" },
+                        },
+                        [
+                          _vm._v(
+                            "\n                            Article Title\n                        "
+                          ),
+                        ]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "text-grey-darker text-sm" }, [
+                      _vm._v(
+                        "\n                        11/1/19\n                    "
+                      ),
+                    ]),
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "footer",
+                  {
+                    staticClass:
+                      "flex items-center justify-between leading-none p-2 md:p-4",
+                  },
+                  [
+                    _c(
+                      "a",
+                      {
+                        staticClass:
+                          "flex items-center no-underline hover:underline text-black",
+                        attrs: { href: "#" },
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "block rounded-full",
+                          attrs: {
+                            alt: "Placeholder",
+                            src: "https://picsum.photos/32/32/?random",
+                          },
+                        }),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "ml-2 text-sm" }, [
+                          _vm._v(
+                            "\n                            Author Name\n                        "
+                          ),
+                        ]),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass:
+                          "no-underline text-grey-darker hover:text-red-dark",
+                        attrs: { href: "#" },
+                      },
+                      [
+                        _c("span", { staticClass: "hidden" }, [_vm._v("Like")]),
+                        _vm._v(" "),
+                        _c("i", { staticClass: "fa fa-heart" }),
+                      ]
+                    ),
+                  ]
+                ),
+              ]
+            ),
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3" },
+          [
+            _c(
+              "article",
+              { staticClass: "overflow-hidden rounded-lg shadow-lg" },
+              [
+                _c("a", { attrs: { href: "#" } }, [
+                  _c("img", {
+                    staticClass: "block h-auto w-full",
+                    attrs: {
+                      alt: "Placeholder",
+                      src: "https://picsum.photos/600/400/?random",
+                    },
+                  }),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "header",
+                  {
+                    staticClass:
+                      "flex items-center justify-between leading-tight p-2 md:p-4",
+                  },
+                  [
+                    _c("h1", { staticClass: "text-lg" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass:
+                            "no-underline hover:underline text-black",
+                          attrs: { href: "#" },
+                        },
+                        [
+                          _vm._v(
+                            "\n                            Article Title\n                        "
+                          ),
+                        ]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "text-grey-darker text-sm" }, [
+                      _vm._v(
+                        "\n                        11/1/19\n                    "
+                      ),
+                    ]),
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "footer",
+                  {
+                    staticClass:
+                      "flex items-center justify-between leading-none p-2 md:p-4",
+                  },
+                  [
+                    _c(
+                      "a",
+                      {
+                        staticClass:
+                          "flex items-center no-underline hover:underline text-black",
+                        attrs: { href: "#" },
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "block rounded-full",
+                          attrs: {
+                            alt: "Placeholder",
+                            src: "https://picsum.photos/32/32/?random",
+                          },
+                        }),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "ml-2 text-sm" }, [
+                          _vm._v(
+                            "\n                            Author Name\n                        "
+                          ),
+                        ]),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass:
+                          "no-underline text-grey-darker hover:text-red-dark",
+                        attrs: { href: "#" },
+                      },
+                      [
+                        _c("span", { staticClass: "hidden" }, [_vm._v("Like")]),
+                        _vm._v(" "),
+                        _c("i", { staticClass: "fa fa-heart" }),
+                      ]
+                    ),
+                  ]
+                ),
+              ]
+            ),
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3" },
+          [
+            _c(
+              "article",
+              { staticClass: "overflow-hidden rounded-lg shadow-lg" },
+              [
+                _c("a", { attrs: { href: "#" } }, [
+                  _c("img", {
+                    staticClass: "block h-auto w-full",
+                    attrs: {
+                      alt: "Placeholder",
+                      src: "https://picsum.photos/600/400/?random",
+                    },
+                  }),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "header",
+                  {
+                    staticClass:
+                      "flex items-center justify-between leading-tight p-2 md:p-4",
+                  },
+                  [
+                    _c("h1", { staticClass: "text-lg" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass:
+                            "no-underline hover:underline text-black",
+                          attrs: { href: "#" },
+                        },
+                        [
+                          _vm._v(
+                            "\n                            Article Title\n                        "
+                          ),
+                        ]
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "text-grey-darker text-sm" }, [
+                      _vm._v(
+                        "\n                        11/1/19\n                    "
+                      ),
+                    ]),
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "footer",
+                  {
+                    staticClass:
+                      "flex items-center justify-between leading-none p-2 md:p-4",
+                  },
+                  [
+                    _c(
+                      "a",
+                      {
+                        staticClass:
+                          "flex items-center no-underline hover:underline text-black",
+                        attrs: { href: "#" },
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "block rounded-full",
+                          attrs: {
+                            alt: "Placeholder",
+                            src: "https://picsum.photos/32/32/?random",
+                          },
+                        }),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "ml-2 text-sm" }, [
+                          _vm._v(
+                            "\n                            Author Name\n                        "
+                          ),
+                        ]),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass:
+                          "no-underline text-grey-darker hover:text-red-dark",
+                        attrs: { href: "#" },
+                      },
+                      [
+                        _c("span", { staticClass: "hidden" }, [_vm._v("Like")]),
+                        _vm._v(" "),
+                        _c("i", { staticClass: "fa fa-heart" }),
+                      ]
+                    ),
+                  ]
+                ),
+              ]
+            ),
+          ]
+        ),
+      ]),
     ])
   },
 ]

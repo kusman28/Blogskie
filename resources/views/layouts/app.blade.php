@@ -15,7 +15,7 @@
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
-<body class="bg-gray-100 h-screen antialiased leading-none font-sans">
+<body class="bg-gray-100 font-sans">
     <div id="app">
         <header class="bg-blue-500 py-6">
             <div class="container mx-auto flex justify-between items-center px-6">
@@ -44,9 +44,9 @@
                 </nav>
             </div>
         </header>
-        <div class="min-h-screen flex items-center justify-center">
-            @yield('content')
-        </div>
+        {{-- <div class="container my-12 mx-auto px-4 md:px-12">
+        </div> --}}
+        @yield('content')
     </div>
 </body>
 </html>
