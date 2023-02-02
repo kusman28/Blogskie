@@ -17,7 +17,7 @@
 </head>
 <body class="bg-gray-100 font-sans">
     <div id="app">
-        <header class="bg-blue-500 py-6">
+        <header class="bg-blue-500 py-6 nav-dark">
             <div class="container mx-auto flex justify-between items-center px-6">
                 <div>
                     <a href="{{ url('/') }}" class="text-lg font-semibold text-gray-100 no-underline">
@@ -61,7 +61,7 @@
 <style>
 
 body[light-mode="dark"] {
-    background-color: #182747;
+    background-color: #101b35;
     color: #9fa4b1;
 }
 
@@ -82,6 +82,16 @@ body[light-mode="dark"] h1 {
     color: #c8ccda;
 }
 
+body[light-mode="dark"] .content {
+    background-color: #182747;
+}
+
+body[light-mode="dark"] .badge-bg {
+  background-color: #8f93a3;
+}
+body[light-mode="dark"] .nav-dark {
+  background-color: #182747;
+}
 .checkbox {
   opacity: 0;
   position: absolute;
