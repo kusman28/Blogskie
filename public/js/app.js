@@ -8418,7 +8418,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".img-wrapper[data-v-6423c439] {\n  overflow: hidden;\n}\n.inner-img[data-v-6423c439] {\n  transition: 0.3s;\n}\n.inner-img[data-v-6423c439]:hover {\n  transform: scale(1.1);\n}\n.img-wrapper[data-v-6423c439] {\n  box-sizing: border-box;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body[light-mode=dark] .content[data-v-6423c439] {\n  background-color: #182747;\n}\nbody[light-mode=dark] .badge-bg[data-v-6423c439] {\n  background-color: #8f93a3;\n}\n.img-wrapper[data-v-6423c439] {\n  overflow: hidden;\n}\n.inner-img[data-v-6423c439] {\n  transition: 0.3s;\n}\n.inner-img[data-v-6423c439]:hover {\n  transform: scale(1.1);\n}\n.img-wrapper[data-v-6423c439] {\n  box-sizing: border-box;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

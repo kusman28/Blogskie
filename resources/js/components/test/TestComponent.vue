@@ -301,6 +301,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+body[light-mode="dark"] .content {
+    background-color: #182747;
+}
+
+body[light-mode="dark"] .badge-bg {
+  background-color: #8f93a3;
+}
+
 .img-wrapper {  
   overflow: hidden; 
 }

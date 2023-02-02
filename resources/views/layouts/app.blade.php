@@ -82,13 +82,6 @@ body[light-mode="dark"] h1 {
     color: #c8ccda;
 }
 
-body[light-mode="dark"] .content {
-    background-color: #182747;
-}
-
-body[light-mode="dark"] .badge-bg {
-  background-color: #8f93a3;
-}
 body[light-mode="dark"] .nav-dark {
   background-color: #182747;
 }

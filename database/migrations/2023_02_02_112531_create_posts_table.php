@@ -21,7 +21,7 @@ class CreatePostsTable extends Migration
             $table->string('slug', 100);
             $table->string('image');
             $table->boolean('published')->default(1);
-            $table->timestamps('published_at');
+            $table->date('published_at');
             $table->bigInteger('views')->default(0);
             $table->timestamps();
 
