@@ -23,9 +23,17 @@ window.Vue = require('vue').default;
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('test-component', require('./components/test/TestComponent.vue').default);
 
-// Packages use
+// import packages
 import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
+import moment from 'moment'
+
+Vue.filter('myDate', function(created){
+    return moment(created).format('MMMM Do YYYY');
+})
+Vue.filter('minsAgo', function(){
+    return moment().startOf('hour').fromNow();
+})
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

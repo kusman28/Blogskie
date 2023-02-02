@@ -31,6 +31,7 @@ class PostSeeder extends Seeder
                 'slug' => $faker->word,
                 'image' => 'https://picsum.photos/id/'.rand(1, 50).'/600/400',
                 'published_at' => Carbon::now(),
+                'views' => rand(1, 50),
             ]);
             $posts++;
         }
