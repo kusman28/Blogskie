@@ -16,7 +16,7 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body class="bg-gray-100 font-sans">
-    <div id="app" class="content">
+    <div id="app">
         <header class="bg-blue-500 py-6">
             <div class="container mx-auto flex justify-between items-center px-6">
                 <div>
@@ -24,7 +24,7 @@
                         {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
-                <nav class="space-x-4 text-gray-100 text-sm sm:text-base">
+                <nav class="space-x-4 text-gray-100 text-sm sm:text-base flex">
                     @guest
                         <a class="no-underline hover:underline" href="{{ route('login') }}">{{ __('Login') }}</a>
                         @if (Route::has('register'))
@@ -41,13 +41,15 @@
                             {{ csrf_field() }}
                         </form>
                     @endguest
-                    <div class="theme-switch-wrapper">
-                        <label class="theme-switch" for="checkbox">
-                        <input onclick="toggleTheme()" type="checkbox" id="checkbox" />
-                        <div class="slider round"></div>
-                    </label>
+                    <div class="px-4">
+                      <input type="checkbox" class="checkbox" id="checkbox" onclick="toggle_light_mode()" aria-label="Dark Mode Toggle">
+                      <label for="checkbox" class="label">
+                        <i class="fas fa-moon"></i>
+                        <i class='fas fa-sun'></i>
+                        <div class='ball'>
+                      </label>
                     </div>
-                </nav>
+                  </nav>
             </div>
         </header>
         {{-- <div class="container my-12 mx-auto px-4 md:px-12">
@@ -57,80 +59,103 @@
 </body>
 </html>
 <style>
-    body {
-  transition:filter 300ms ease-in-out;
-}
-.content {
-  /* padding:30px 100px;
-  font-size:20px; */
-  color:#111;
-  background: rgb(244 245 247 / var(--tw-bg-opacity));;
-}
-/*slider switch css */
-.theme-switch-wrapper {
-  display: flex;
-  align-items: center;
-  
-  em {
-    margin-left: 10px;
-    font-size: 1rem;
-  }
-}
-.theme-switch {
-  display: inline-block;
-  height: 34px;
-  position: relative;
-  width: 60px;
+
+body[light-mode="dark"] {
+    background-color: #182747;
+    color: #9fa4b1;
 }
 
-.theme-switch input {
-  display:none;
+body[light-mode="dark"] .light-mode-button span:nth-child(1) {
+    background-color: #ced4e2;
+    color: #141516;
 }
 
-.slider {
-  background-color: #ccc;
-  bottom: 0;
-  cursor: pointer;
-  left: 0;
+body[light-mode="dark"] .light-mode-button span:nth-child(2) {
+    left: 65px;
+    background-color: #141516;
+}
+
+body[light-mode="dark"] a {
+    color: #9fa4b1;
+}
+body[light-mode="dark"] h1 {
+    color: #c8ccda;
+}
+
+.checkbox {
+  opacity: 0;
   position: absolute;
-  right: 0;
-  top: 0;
-  transition: .4s;
 }
 
-.slider:before {
-  background-color: #fff;
-  bottom: 4px;
-  content: "";
+.label {
+  width: 50px;
   height: 26px;
-  left: 4px;
+  background-color:#111;
+  display: flex;
+  border-radius:50px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  transform: scale(1.5);
+}
+
+.ball {
+  width: 20px;
+  height: 20px;
+  background-color: white;
   position: absolute;
-  transition: .4s;
-  width: 26px;
-}
-
-input:checked + .slider {
-  background-color: #66bb6a;
-}
-
-input:checked + .slider:before {
-  transform: translateX(26px);
-}
-
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
+  top: 2px;
+  left: 2px;
   border-radius: 50%;
+  transition: transform 0.2s linear;
 }
-body.dark-mode {
-  filter: invert(1) hue-rotate(200deg) brightness(0.9);
-  /* background-color: #161625; */
+
+/*  target the elemenent after the label*/
+.checkbox:checked + .label .ball{
+  transform: translateX(24px);
 }
+
+.fa-moon {
+  color: pink;
+}
+
+.fa-sun {
+  color: yellow;
+}
+
 </style>
 <script>
-    function toggleTheme(){
-        document.body.classList.toggle('dark-mode');
+  function toggleTheme(){
+      document.body.classList.toggle('dark-mode');
+  }
+
+
+  var app = document.getElementsByTagName("BODY")[0];
+  if (localStorage.lightMode == "dark") {
+      app.setAttribute("light-mode", "dark");
+  }
+  function toggle_light_mode() {
+    var app = document.getElementsByTagName("BODY")[0];
+    if (localStorage.lightMode == "dark") {
+        localStorage.lightMode = "light";
+        app.setAttribute("light-mode", "light");
+    } else {
+        localStorage.lightMode = "dark";
+        app.setAttribute("light-mode", "dark");
     }
+  }
+
+  window.addEventListener(
+    "storage",
+    function () {
+        if (localStorage.lightMode == "dark") {
+            app.setAttribute("light-mode", "dark");
+        } else {
+            app.setAttribute("light-mode", "light");
+        }
+    },
+    false
+  );
+
 </script>
