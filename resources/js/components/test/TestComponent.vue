@@ -11,27 +11,29 @@
             <!-- Article -->
             <article class="overflow-hidden rounded-lg shadow-lg">
                 <div class="img-wrapper">
-                    <a href="#">
+                    <a :href="`post/${post.slug}`">
                         <img alt="Placeholder" class="block h-auto w-full inner-img" :src="post.image">
                     </a>
                 </div>
                 <div class="content">
                     <header class="flex items-center justify-between leading-tight p-3 md:p-4">
                         <h1 class="text-lg">
-                            <a class="no-underline hover:underline font-bold text-black" href="#">
+                            <a class="no-underline hover:underline font-bold text-black" :href="`post/${post.slug}`">
                                 {{ post.title }}
                             </a>
                         </h1>
                         <p class="text-grey-darker text-sm">
                             {{ post.published_at | minsAgo }}
+                            <i class="fa fa-clock"></i>
                         </p>
                     </header>
                     <p class="p-3 italic">
                         {{ post.body | shortDesc }}...
+                        <a :href="`post/${post.slug}`">Read more</a>
                     </p>
     
                     <footer class="flex items-center justify-between leading-none p-2 md:p-4">
-                        <a class="flex items-center no-underline hover:underline text-black" href="#">
+                        <a class="flex items-center no-underline hover:underline text-black" :href="`user/${post.user.name}`">
                             <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random">
                             <p class="ml-2 text-sm">
                                 {{ post.user.name }}
@@ -42,8 +44,8 @@
                             <i class="fa fa-heart"></i>
                         </a> -->
                         <p class="ml-2 text-sm">
-                            <i class="fa fa-eye"></i>
                             {{ post.views }}
+                            <i class="fa fa-eye"></i>
                         </p>
                     </footer>
                     <div class="px-6 pt-4 pb-2">

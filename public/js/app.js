@@ -8074,6 +8074,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -47997,7 +47999,7 @@ var render = function () {
               { staticClass: "overflow-hidden rounded-lg shadow-lg" },
               [
                 _c("div", { staticClass: "img-wrapper" }, [
-                  _c("a", { attrs: { href: "#" } }, [
+                  _c("a", { attrs: { href: "post/" + post.slug } }, [
                     _c("img", {
                       staticClass: "block h-auto w-full inner-img",
                       attrs: { alt: "Placeholder", src: post.image },
@@ -48019,7 +48021,7 @@ var render = function () {
                           {
                             staticClass:
                               "no-underline hover:underline font-bold text-black",
-                            attrs: { href: "#" },
+                            attrs: { href: "post/" + post.slug },
                           },
                           [
                             _vm._v(
@@ -48035,8 +48037,9 @@ var render = function () {
                         _vm._v(
                           "\n                            " +
                             _vm._s(_vm._f("minsAgo")(post.published_at)) +
-                            "\n                        "
+                            "\n                            "
                         ),
+                        _c("i", { staticClass: "fa fa-clock" }),
                       ]),
                     ]
                   ),
@@ -48045,8 +48048,11 @@ var render = function () {
                     _vm._v(
                       "\n                        " +
                         _vm._s(_vm._f("shortDesc")(post.body)) +
-                        "...\n                    "
+                        "...\n                        "
                     ),
+                    _c("a", { attrs: { href: "post/" + post.slug } }, [
+                      _vm._v("Read more"),
+                    ]),
                   ]),
                   _vm._v(" "),
                   _c(
@@ -48061,7 +48067,7 @@ var render = function () {
                         {
                           staticClass:
                             "flex items-center no-underline hover:underline text-black",
-                          attrs: { href: "#" },
+                          attrs: { href: "user/" + post.user.name },
                         },
                         [
                           _c("img", {
@@ -48083,12 +48089,12 @@ var render = function () {
                       ),
                       _vm._v(" "),
                       _c("p", { staticClass: "ml-2 text-sm" }, [
-                        _c("i", { staticClass: "fa fa-eye" }),
                         _vm._v(
                           "\n                            " +
                             _vm._s(post.views) +
-                            "\n                        "
+                            "\n                            "
                         ),
+                        _c("i", { staticClass: "fa fa-eye" }),
                       ]),
                     ]
                   ),
