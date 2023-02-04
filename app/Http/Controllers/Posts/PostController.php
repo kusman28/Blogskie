@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\API\Posts;
+namespace App\Http\Controllers\Posts;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post\Post;
@@ -8,23 +8,19 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+    // function __construct()
+    // {
+    //     $this->middleware('auth', ['except' => ['index', 'show']]);
+    // }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $posts = Post::with('user')->latest()->paginate(10);
-
-        return response()->json($posts);
-    }
-
-    
-    public function getArticle($slug)
-    {
-        $article = Post::where('slug', $slug)->get();
-        return response()->json($article);
+    public function index($slug)
+    {   
+        $article = Post::where('slug', $slug)->firstOrFail();
+        return view('test.article', compact('article'));
     }
 
     /**

@@ -22,6 +22,7 @@ window.Vue = require('vue').default;
 // Components
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('test-component', require('./components/test/TestComponent.vue').default);
+Vue.component('view-article', require('./components/test/ViewArticle.vue').default);
 
 // import packages
 import '@fortawesome/fontawesome-free/css/all.css'
@@ -32,7 +33,7 @@ Vue.filter('myDate', function(created){
     return moment(created).format('MMMM Do YYYY');
 })
 Vue.filter('minsAgo', function(){
-    return moment().startOf('hour').fromNow();
+    return moment().startOf('day').fromNow();
 })
 
 /**

@@ -29,7 +29,7 @@
                     </header>
                     <p class="p-3 italic">
                         {{ post.body | shortDesc }}...
-                        <a :href="`post/${post.slug}`">Read more</a>
+                        <a class="read-more hover:underline" :href="`/${post.slug}`">Read more</a>
                     </p>
     
                     <footer class="flex items-center justify-between leading-none p-2 md:p-4">
@@ -61,6 +61,9 @@
         </div>
         <!-- END Column -->
 
+        <!-- <ViewArticle
+            :parent="post_datas"
+        /> -->
 
     </div>
 </div>
@@ -68,9 +71,10 @@
 
 <script>
 import {fetchPosts} from './mixins/mixin';
+import ViewArticle from './ViewArticle.vue'
 export default {
     name: 'BlogskieTestComponent',
-
+    components: { ViewArticle },
     data() {
         return {
             post_datas: {}
@@ -113,6 +117,11 @@ body[light-mode="dark"] .content {
 
 body[light-mode="dark"] .badge-bg {
   background-color: #8f93a3;
+}
+
+body[light-mode="dark"] .read-more {
+    color: #bec0c7;
+    font-weight: bold;
 }
 
 .img-wrapper {  

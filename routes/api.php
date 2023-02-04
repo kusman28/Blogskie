@@ -19,4 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('posts', [PostController::class, 'index'])->name('posts');
+Route::group(['namespace' => 'Posts', 'prefix' => 'posts'], function() {
+    Route::get('/', [PostController::class, 'index']);
+    Route::get('/{slug}', [PostController::class, 'getArticle']);
+});
