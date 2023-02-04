@@ -12,7 +12,7 @@ class PostController extends Controller
     // {
     //     $this->middleware('auth', ['except' => ['index', 'show']]);
     // }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +25,7 @@ class PostController extends Controller
     
     public function getSlug($slug)
     {   
-        $article = Post::where('slug', $slug)->firstOrFail();
+        $article = Post::with('user')->where('slug', $slug)->firstOrFail();
         return view('articles.article', compact('article'));
     }
 

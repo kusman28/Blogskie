@@ -21,7 +21,7 @@ window.Vue = require('vue').default;
 
 // Components
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('test-component', require('./components/Articles/ArticleList.vue').default);
+Vue.component('article-list', require('./components/Articles/ArticleList.vue').default);
 Vue.component('view-article', require('./components/Articles/ViewArticle.vue').default);
 
 // import packages
