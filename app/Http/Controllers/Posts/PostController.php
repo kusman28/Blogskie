@@ -12,15 +12,21 @@ class PostController extends Controller
     // {
     //     $this->middleware('auth', ['except' => ['index', 'show']]);
     // }
+    
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($slug)
+    public function index()
+    {   
+        return view('articles.index');
+    }
+    
+    public function getSlug($slug)
     {   
         $article = Post::where('slug', $slug)->firstOrFail();
-        return view('test.article', compact('article'));
+        return view('articles.article', compact('article'));
     }
 
     /**

@@ -48276,11 +48276,18 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container my-12 mx-auto px-4 md:px-12" }, [
-    _c("h1", { staticClass: "text-lg font-bold text-black" }, [
-      _vm._v("\n        " + _vm._s(this.article.title) + "\n    "),
-    ]),
-  ])
+  return _c(
+    "div",
+    {
+      staticClass:
+        "container my-12 mx-auto px-4 md:px-12 flex justify-center items-center",
+    },
+    [
+      _c("h1", { staticClass: "text-4xl font-bold text-black" }, [
+        _vm._v("\n        " + _vm._s(this.article.title) + "\n    "),
+      ]),
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

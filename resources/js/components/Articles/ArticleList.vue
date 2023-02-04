@@ -70,7 +70,7 @@
 </template>
 
 <script>
-import {fetchPosts} from './mixins/mixin';
+import { fetchPosts } from './mixins/mixin';
 import ViewArticle from './ViewArticle.vue'
 export default {
     name: 'BlogskieTestComponent',

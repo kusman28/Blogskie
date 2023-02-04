@@ -1,6 +1,6 @@
 <template>
-    <div class="container my-12 mx-auto px-4 md:px-12">
-        <h1 class="text-lg font-bold text-black">
+    <div class="container my-12 mx-auto px-4 md:px-12 flex justify-center items-center">
+        <h1 class="text-4xl font-bold text-black">
             {{ this.article.title }}
         </h1>
     </div>
