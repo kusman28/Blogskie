@@ -12,9 +12,19 @@ class Post extends Model
 
     protected $table = 'posts';
     protected $guarded = [];
-
+    
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function getTitleAttribute($title)
+    {
+        return ucfirst($title);
+    }
+
+    public function getBodyAttribute($body)
+    {
+        return ucfirst($body);
     }
 }

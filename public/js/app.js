@@ -48181,7 +48181,7 @@ var render = function () {
               { staticClass: "overflow-hidden rounded-lg shadow-lg" },
               [
                 _c("div", { staticClass: "img-wrapper" }, [
-                  _c("a", { attrs: { href: "post/" + post.slug } }, [
+                  _c("a", { attrs: { href: "/" + post.slug } }, [
                     _c("img", {
                       staticClass: "block h-auto w-full inner-img",
                       attrs: { alt: "Placeholder", src: post.image },
@@ -48203,7 +48203,7 @@ var render = function () {
                           {
                             staticClass:
                               "no-underline hover:underline font-bold text-black",
-                            attrs: { href: "post/" + post.slug },
+                            attrs: { href: "/" + post.slug },
                           },
                           [
                             _vm._v(
@@ -48238,7 +48238,7 @@ var render = function () {
                         staticClass: "read-more hover:underline",
                         attrs: { href: "/" + post.slug },
                       },
-                      [_vm._v("Read more")]
+                      [_vm._v("Read more →")]
                     ),
                   ]),
                   _vm._v(" "),

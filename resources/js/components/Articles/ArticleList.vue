@@ -11,14 +11,14 @@
             <!-- Article -->
             <article class="overflow-hidden rounded-lg shadow-lg">
                 <div class="img-wrapper">
-                    <a :href="`post/${post.slug}`">
+                    <a :href="`/${post.slug}`">
                         <img alt="Placeholder" class="block h-auto w-full inner-img" :src="post.image">
                     </a>
                 </div>
                 <div class="content">
                     <header class="flex items-center justify-between leading-tight p-3 md:p-4">
                         <h1 class="text-lg">
-                            <a class="no-underline hover:underline font-bold text-black" :href="`post/${post.slug}`">
+                            <a class="no-underline hover:underline font-bold text-black" :href="`/${post.slug}`">
                                 {{ post.title }}
                             </a>
                         </h1>
@@ -29,7 +29,7 @@
                     </header>
                     <p class="p-3 italic">
                         {{ post.body | shortDesc }}...
-                        <a class="read-more hover:underline" :href="`/${post.slug}`">Read more</a>
+                        <a class="read-more hover:underline" :href="`/${post.slug}`">Read more →</a>
                     </p>
     
                     <footer class="flex items-center justify-between leading-none p-2 md:p-4">
