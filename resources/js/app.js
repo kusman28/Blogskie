@@ -23,12 +23,16 @@ window.Vue = require('vue').default;
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('article-list', require('./components/Articles/ArticleList.vue').default);
 Vue.component('view-article', require('./components/Articles/ViewArticle.vue').default);
+Vue.component('create-article', require('./components/Articles/CreateArticle.vue').default);
 
 // import packages
 import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
 import moment from 'moment'
+import { VueEditor } from "vue2-editor";
 
+
+// filters
 Vue.filter('myDate', function(created){
     return moment(created).format('MMMM Do YYYY');
 })

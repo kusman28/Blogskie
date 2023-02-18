@@ -22,4 +22,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['namespace' => 'Posts', 'prefix' => 'posts'], function() {
     Route::get('/', [PostController::class, 'index']);
     Route::get('/{slug}', [PostController::class, 'getArticle']);
+    Route::post('/create', [PostController::class, 'store']);
 });

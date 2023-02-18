@@ -12,6 +12,8 @@ class Post extends Model
 
     protected $table = 'posts';
     protected $guarded = [];
+
+    public $with = ['user'];
     
     public function user()
     {
@@ -26,5 +28,10 @@ class Post extends Model
     public function getBodyAttribute($body)
     {
         return ucfirst($body);
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 }

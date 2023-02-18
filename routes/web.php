@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Post\Post;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +20,15 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Auth::routes();
-Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/', [App\Http\Controllers\Posts\PostController::class, 'index'])->name('test');
-Route::get('/{slug}', [App\Http\Controllers\Posts\PostController::class, 'getSlug'])->name('slug');
+Route::get('/', [App\Http\Controllers\Posts\PostController::class, 'index']);
+
+
+Route::prefix('post')->group(function () {
+    Route::get('/create', [App\Http\Controllers\Posts\PostController::class, 'create'])->name('create');
+    Route::get('/{slug}', [App\Http\Controllers\Posts\PostController::class, 'getSlug'])->name('slug');
+    // Route::get('/post/{post:slug}', function (Post $post) {
+    //     return $post;
+    // });
+});

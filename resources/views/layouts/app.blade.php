@@ -85,6 +85,9 @@ body[light-mode="dark"] h1 {
 body[light-mode="dark"] .nav-dark {
   background-color: #182747;
 }
+body[light-mode="dark"] .ql-toolbar {
+    background-color: #c8ccda;
+}
 .checkbox {
   opacity: 0;
   position: absolute;
