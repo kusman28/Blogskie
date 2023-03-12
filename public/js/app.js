@@ -8144,6 +8144,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -8152,7 +8165,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      content: "<h1>Some initial content</h1>",
+      content: "<i>Write something here...</i>",
       customToolbar: [[{
         header: [false, 1, 2, 3, 4, 5, 6]
       }], ["bold", "italic", "underline"], [{
@@ -8168,7 +8181,9 @@ __webpack_require__.r(__webpack_exports__);
       // ],
       ["blockquote", "code-block"], [{
         color: []
-      }]]
+      }], ['link', 'image' /**, 'video', 'formula'*/], [{
+        'direction': 'rtl'
+      }], ['clean']]
     };
   },
   mounted: function mounted() {},
@@ -10480,7 +10495,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n#editor {\r\n  width: 550px;\r\n  height: 350px;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n#editor {\r\n  width: 700px;\r\n  height: 350px;\n}\n#preview {\r\n  width: 600px;\r\n  /* height: 400px; */\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -62190,13 +62205,15 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container my-12 mx-auto px-4 md:px-12" }, [
-    _c("h1", { staticClass: "text-lg font-bold text-black" }, [
+    _c("h1", { staticClass: "text-2xl font-bold text-gray-800" }, [
       _vm._v("\n        Create Post\n    "),
     ]),
     _vm._v(" "),
+    _vm._m(0),
+    _vm._v(" "),
     _c(
       "div",
-      { staticClass: "flex flex-wrap -mx-1 lg:-mx-4" },
+      { staticClass: "mt-2 flex flex-wrap" },
       [
         _c("vue-editor", {
           attrs: { id: "editor", "editor-toolbar": _vm.customToolbar },
@@ -62209,18 +62226,57 @@ var render = function () {
           },
         }),
         _vm._v(" "),
-        _c("div", { staticClass: "ql-snow" }, [
-          _c("div", {
-            staticClass: "ql-editor",
-            domProps: { innerHTML: _vm._s(_vm.content) },
-          }),
-        ]),
+        _c(
+          "div",
+          {
+            staticClass: "ml-4 bg-white p-2 rounded-lg shadow-lg",
+            attrs: { id: "preview" },
+          },
+          [
+            _c(
+              "h1",
+              { staticClass: "text-2xl ml-2 font-bold mb-2 text-gray-800" },
+              [_vm._v("Preview")]
+            ),
+            _vm._v(" "),
+            _c("hr"),
+            _vm._v(" "),
+            _c("div", { staticClass: "ql-snow" }, [
+              _c("div", {
+                staticClass: "ql-editor",
+                domProps: { innerHTML: _vm._s(_vm.content) },
+              }),
+            ]),
+          ]
+        ),
       ],
       1
     ),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mb-4 mt-6" }, [
+      _c(
+        "label",
+        {
+          staticClass: "block text-gray-700 text-sm font-bold mb-2",
+          attrs: { for: "title" },
+        },
+        [_vm._v("\n        Title\n    ")]
+      ),
+      _vm._v(" "),
+      _c("input", {
+        staticClass:
+          "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+        attrs: { id: "title", type: "text" },
+      }),
+    ])
+  },
+]
 render._withStripped = true
 
 
