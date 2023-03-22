@@ -8080,6 +8080,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue2_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue2-editor */ "./node_modules/vue2-editor/dist/vue2-editor.esm.js");
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['user_id'],
   components: {
     VueEditor: vue2_editor__WEBPACK_IMPORTED_MODULE_0__.VueEditor
   },
@@ -8105,11 +8106,13 @@ __webpack_require__.r(__webpack_exports__);
         'direction': 'rtl'
       }], ['clean']],
       form: new Form({
+        user_id: this.user_id,
         title: '',
         content: '',
         image: ''
       }),
-      url: null
+      url: null,
+      image_file_name: null
     };
   },
   mounted: function mounted() {},
@@ -8120,6 +8123,7 @@ __webpack_require__.r(__webpack_exports__);
       this.url = URL.createObjectURL(this.image);
       var file = e.target.files[0];
       var reader = new FileReader();
+      this.image_file_name = file.name;
       if (file['size'] < 2111775) {
         reader.onloadend = function (file) {
           _this.form.image = reader.result;
@@ -8128,6 +8132,30 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         alert('File size can not be bigger than 2 MB');
       }
+    },
+    saveArticle: function saveArticle() {
+      var _this2 = this;
+      this.form.post('/api/posts/create', {
+        image: this.form.image
+      }).then(function () {
+        _this2.form.reset();
+        _this2.$refs.fileupload.value = null;
+        _this2.url = null;
+      })["catch"](function () {
+        _this2.$Progress.fail();
+      });
+      // axios.post('/api/patient', {
+      //     firstname: this.form.firstname, 
+      //     middlename: this.form.middlename,
+      //     lastname: this.form.lastname,
+      //     age: this.form.age,
+      //     contact_no: this.form.contact_no,
+      //     address: this.form.address,
+      //     pet_name: this.form.pet_name,
+      //     pet_type: this.form.pet_type,
+      //     pet_note: this.form.pet_note,
+      //     });
+      // alert('test');
     }
   }
 });
@@ -8281,30 +8309,94 @@ var render = function render() {
   }, [_c("h1", {
     staticClass: "text-2xl ml-2 font-bold mb-2 text-gray-800"
   }, [_vm._v("Preview")]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", {
+    staticClass: "container px-8 py-5 lg:py-8 mx-auto xl:px-5 max-w-screen-lg !pt-0"
+  }, [_c("div", {
+    staticClass: "max-w-screen-md mx-auto"
+  }, [_c("h1", {
+    staticClass: "mt-2 mb-3 text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white"
+  }, [_vm._v(" \n                    " + _vm._s(_vm.form.title) + "\n                ")]), _vm._v(" "), _c("div", {
+    staticClass: "flex justify-center mt-4",
     attrs: {
       id: "previewCover"
     }
   }, [_vm.url ? _c("img", {
+    staticClass: "w-full border-none rounded shadow",
     attrs: {
       src: _vm.url
     }
-  }) : _vm._e()]), _vm._v(" "), _c("div", {
-    staticClass: "ql-snow"
+  }) : _vm._e()])]), _vm._v(" "), _c("article", {
+    staticClass: "max-w-screen-md mx-auto text-lg"
   }, [_c("div", {
-    staticClass: "ql-editor",
+    staticClass: "mx-auto my-3 prose prose-base dark:prose-invert prose-a:text-blue-500"
+  }, [_c("blockquote", {
     domProps: {
       innerHTML: _vm._s(_vm.content)
     }
-  })])]), _vm._v(" "), _c("h1", {
+  })])])])]), _vm._v(" "), _c("h1", {
     staticClass: "text-2xl font-bold text-gray-800"
-  }, [_vm._v("\n        Create Post\n    ")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n        Create Post\n    ")]), _vm._v(" "), _c("form", {
+    attrs: {
+      method: "POST",
+      enctype: "multipart/form-data"
+    },
+    on: {
+      submit: function submit($event) {
+        $event.preventDefault();
+        return _vm.saveArticle();
+      }
+    }
+  }, [_c("div", {
+    staticClass: "mb-4 mt-6 md:w-1/3"
+  }, [_c("input", {
+    attrs: {
+      type: "hidden",
+      name: "user_id"
+    },
+    domProps: {
+      value: _vm.user_id
+    }
+  }), _vm._v(" "), _c("label", {
+    staticClass: "block text-gray-700 text-sm font-bold mb-2",
+    attrs: {
+      "for": "title"
+    }
+  }, [_vm._v("\n                Title\n            ")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.form.title,
+      expression: "form.title"
+    }],
+    staticClass: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+    "class": {
+      "is-invalid": _vm.form.errors.has("title")
+    },
+    attrs: {
+      id: "title",
+      type: "text"
+    },
+    domProps: {
+      value: _vm.form.title
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.form, "title", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _c("has-error", {
+    attrs: {
+      form: _vm.form,
+      field: "title"
+    }
+  })], 1), _vm._v(" "), _c("div", {
     staticClass: "mb-4 md:w-1/3"
   }, [_c("label", {
     staticClass: "block text-gray-700 text-sm font-bold mb-2",
     attrs: {
       "for": "cover_image"
     }
-  }, [_vm._v("\n            Upload Cover Image\n        ")]), _c("br"), _vm._v(" "), _c("label", {
+  }, [_vm._v("\n                Upload Cover Image "), _vm.image_file_name ? _c("i", [_vm._v("(" + _vm._s(_vm.image_file_name) + ")")]) : _vm._e()]), _vm._v(" "), _c("label", {
     staticClass: "w-64 flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer hover:bg-blue hover:text-gray-700"
   }, [_c("svg", {
     staticClass: "w-8 h-8",
@@ -8331,39 +8423,27 @@ var render = function render() {
       change: _vm.imageProduct
     }
   })])]), _vm._v(" "), _c("div", {
-    staticClass: "mt-2 flex flex-wrap"
+    staticClass: "mt-2 flex flex-wrap mb-4"
   }, [_c("vue-editor", {
     attrs: {
       id: "editor",
       "editor-toolbar": _vm.customToolbar
     },
     model: {
-      value: _vm.content,
+      value: _vm.form.content,
       callback: function callback($$v) {
-        _vm.content = $$v;
+        _vm.$set(_vm.form, "content", $$v);
       },
-      expression: "content"
+      expression: "form.content"
     }
-  })], 1)]);
+  })], 1), _vm._v(" "), _c("button", {
+    staticClass: "focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Submit")])])]);
 };
-var staticRenderFns = [function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c("div", {
-    staticClass: "mb-4 mt-6 md:w-1/3"
-  }, [_c("label", {
-    staticClass: "block text-gray-700 text-sm font-bold mb-2",
-    attrs: {
-      "for": "title"
-    }
-  }, [_vm._v("\n            Title\n        ")]), _vm._v(" "), _c("input", {
-    staticClass: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
-    attrs: {
-      id: "title",
-      type: "text"
-    }
-  })]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 
@@ -76194,7 +76274,7 @@ Vue.compile = compileToFunctions;
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"Promise based HTTP client for the browser and node.js","main":"index.js","scripts":{"test":"grunt test","start":"node ./sandbox/server.js","build":"NODE_ENV=production grunt build","preversion":"npm test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json","postversion":"git push && git push --tags","examples":"node ./examples/server.js","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","fix":"eslint --fix lib/**/*.js"},"repository":{"type":"git","url":"https://github.com/axios/axios.git"},"keywords":["xhr","http","ajax","promise","node"],"author":"Matt Zabriskie","license":"MIT","bugs":{"url":"https://github.com/axios/axios/issues"},"homepage":"https://axios-http.com","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"jsdelivr":"dist/axios.min.js","unpkg":"dist/axios.min.js","typings":"./index.d.ts","dependencies":{"follow-redirects":"^1.14.0"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}]}');
+module.exports = JSON.parse('{"_args":[["axios@0.21.4","C:\\\\laragon\\\\www\\\\Blogskie"]],"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"C:\\\\laragon\\\\www\\\\Blogskie","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
 
 /***/ })
 

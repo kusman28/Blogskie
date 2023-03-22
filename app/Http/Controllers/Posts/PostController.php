@@ -36,7 +36,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('articles.create');
+        $user_id = auth()->id();
+        return view('articles.create', compact('user_id'));
     }
 
     /**

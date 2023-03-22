@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <create-article></create-article>
+    <create-article :user_id="{{ $user_id }}"></create-article>
 @endsection
